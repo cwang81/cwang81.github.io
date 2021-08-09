@@ -5,7 +5,7 @@ keywords: null
 author: Chenghao Wang
 language: en
 timezone: ''
-url: http://example.com
+url: https://cwang81.github.io/
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
@@ -61,4 +61,6 @@ exclude: null
 ignore: null
 theme: icarus
 deploy:
-  type: ''
+  type: 'git'
+  repo: https://github.com/cwang81/cwang81.github.io
+  branch: gh-pages
