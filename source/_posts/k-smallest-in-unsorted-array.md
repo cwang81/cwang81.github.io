@@ -6,19 +6,18 @@ tags: [pq, quick select]
 ---
 
 ### Clarification & Assumption:
-	Input & Output (signature):
-		i. input: int[] array, int k
-		ii. output: int[], k smallest in ascending order
-	For all the possible cases:
-		input not sorted
-		k >=0, k <= input.length
-		array not null
-		corner case: array == [], k == 0 → return empty array
-
+    Input & Output (signature):
+        i. input: int[] array, int k
+        ii. output: int[], k smallest in ascending order
+    For all the possible cases:
+        input not sorted
+        k >=0, k <= input.length
+        array not null
+        corner case: array == [], k == 0 → return empty array
 <!-- more -->
 
 ### Result:
-	high level: 
+    high level: 
         1. bfs, maxHeap (less space than minHeap)
         2. quick select
 
@@ -27,7 +26,7 @@ tags: [pq, quick select]
 	i = 0 to k-1 → maxHeap.offer(array[i]);
 
 	i = k to array.length - 1:
-		smaller than maxHeap.peek();
+		if smaller than maxHeap.peek();
 			maxHeap.poll();
 			maxHeap.offer(array[i]);
 
@@ -38,10 +37,9 @@ tags: [pq, quick select]
 		TC: O(k + (n-k)logk)
 		SC: O(k)
 
-    Test cases:
-        i. Test corner case: length == 0, k == 0 → return empty array
-        ii. Test general case: 9 1 2 7 8 5 3, k = 0/1/2/3/4, etc.
-
+### Test cases:
+    i. Test corner case: length == 0, k == 0 → return empty array
+    ii. Test general case: 9 1 2 7 8 5 3, k = 0/1/2/3/4, etc.
 
 ### 1. Priority Queue
 
